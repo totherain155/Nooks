@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
+import { useState, useEffect } from "react";
 
-const useScroll = () => {
+
+export const useScroll = () => {
     const [state, setState] = useState({
         x: 0,
         y: 0
@@ -20,15 +20,3 @@ const useScroll = () => {
 }
 
 
-const App = () => {
-    const { y } = useScroll();
-    return (
-        <div style={{ height: "1000vh" }}>
-            <h2 style={{ position: "fixed", color: y > 100 ? "red" : "blue" }}>hi</h2>
-        </div>
-    )
-}
-
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
