@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import ReactDom from "react-dom";
+import { useState, useEffect } from "react";
 
-const useTitle = (initTitle) => {
+export const useTitle = (initTitle) => {
     const [title, setTitle] = useState(initTitle);
     const updateTitle = () => {
         const htmlTitle = document.querySelector("title");
@@ -13,14 +12,3 @@ const useTitle = (initTitle) => {
     return setTitle; //제목을 업데이트할 수 있게 setTitle을 return 해준다. 
 };
 
-const App = () => {
-    const titleUpdator = useTitle("Loading...");
-    setTimeout(() => titleUpdator("Home"), 5000);
-    return (
-        <div>
-            <div>Hi</div>
-        </div>
-    );
-};
-
-export default App;
